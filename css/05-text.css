@@ -1,5 +1,70 @@
 /* =========================================================
    05 · СТИЛИ ТЕКСТА
-   Что здесь пишем: font-size, line-height, letter-spacing, text-wrap, вес, цвет, регистр
    ========================================================= */
 
+.hero__title {
+  margin: 1rem 0 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 9vw, 6.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.hero__accent {
+  color: var(--marker);
+}
+
+.hero__lead {
+  margin: clamp(1.2rem, 3vw, 1.8rem) 0 0;
+  max-width: 60ch;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  text-wrap: pretty;
+}
+
+.about__lead {
+  margin: 0 0 1rem;
+  font-size: clamp(1.08rem, 2vw, 1.28rem);
+  line-height: 1.8;
+  text-wrap: balance;
+}
+
+.about__text p:not(.about__lead) {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  max-width: 66ch;
+}
+
+.project-card__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  letter-spacing: -0.02em;
+}
+
+.project-card__text {
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+}
+
+.timeline__title {
+  margin: 0.4rem 0 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+}
+
+.timeline__text {
+  margin: 0.6rem 0 0;
+  color: var(--muted);
+  max-width: 52ch;
+}
+
+.contact__text {
+  margin: 0;
+  color: var(--muted);
+  max-width: 38ch;
+}

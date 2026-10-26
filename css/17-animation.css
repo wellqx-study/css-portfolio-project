@@ -1,5 +1,57 @@
 /* =========================================================
-   17 · АНИМАЦИЯ (@keyframes)
-   Что здесь пишем: animation, infinite, alternate, prefers-reduced-motion
+   17 · АНИМАЦИЯ
    ========================================================= */
 
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklch, var(--marker) 36%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 10px color-mix(in oklch, var(--marker) 0%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in oklch, var(--marker) 0%, transparent);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--float-rot, 0deg));
+  }
+  50% {
+    transform: translateY(-10px) rotate(var(--float-rot, 0deg));
+  }
+}
+
+.chip--code {
+  --float-rot: -6deg;
+}
+
+.chip--css {
+  --float-rot: 8deg;
+}
+
+.marquee__track {
+  animation: marquee 28s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

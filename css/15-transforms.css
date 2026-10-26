@@ -1,5 +1,37 @@
 /* =========================================================
    15 · ТРАНСФОРМАЦИИ
-   Что здесь пишем: translate, scale, rotate, transform-origin: hover-эффекты, бургер-крестик
    ========================================================= */
 
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
+.chip {
+  animation: float 9s ease-in-out infinite;
+}
+
+.chip--css {
+  animation-delay: -4s;
+}
+
+.project-card {
+  transition: transform 220ms var(--ease-out), box-shadow 220ms var(--ease-out), border-color 220ms var(--ease-out);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elev);
+}
+
+.skill-card {
+  transition: transform 220ms var(--ease-out), border-color 220ms var(--ease-out);
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in oklch, var(--marker) 50%, var(--border));
+}

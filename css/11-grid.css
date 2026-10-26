@@ -1,5 +1,211 @@
 /* =========================================================
    11 · GRID
-   Что здесь пишем: grid-template-columns, fr, repeat, auto-fit, minmax, span, grid-column, адаптивность
    ========================================================= */
 
+.hero__visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.chip {
+  position: absolute;
+  display: inline-flex;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid color-mix(in oklch, var(--border) 90%, transparent);
+  background: color-mix(in oklch, var(--surface) 88%, transparent);
+  backdrop-filter: blur(10px);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.chip--code {
+  top: 12%;
+  left: -6%;
+}
+
+.chip--css {
+  bottom: 14%;
+  right: -4%;
+}
+
+.about__grid {
+  display: grid;
+  gap: clamp(2rem, 6vw, 4rem);
+  margin-top: clamp(2.4rem, 6vw, 4rem);
+}
+
+@media (min-width: 980px) {
+  .about__grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: center;
+  }
+}
+
+.facts {
+  display: grid;
+  margin-top: clamp(2rem, 4vw, 2.8rem);
+}
+
+.facts__item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: 1rem;
+  align-items: baseline;
+  padding-block: 1rem;
+  border-top: 1px solid color-mix(in oklch, var(--border) 90%, transparent);
+}
+
+.facts__item:last-child {
+  border-bottom: 1px solid color-mix(in oklch, var(--border) 90%, transparent);
+}
+
+.facts__item dt {
+  color: var(--muted);
+}
+
+.facts__item dd {
+  margin: 0;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: clamp(1rem, 3vw, 1.6rem);
+  margin: clamp(2.4rem, 6vw, 4rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill-card {
+  display: grid;
+  gap: 0.8rem;
+  padding: clamp(1.8rem, 4vw, 2.4rem);
+  border-radius: var(--radius-l);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.skill-card__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+}
+
+.skill-card__text {
+  margin: 0;
+  color: var(--muted);
+}
+
+.project-grid {
+  display: grid;
+  gap: clamp(1rem, 3vw, 1.6rem);
+  margin-top: clamp(2.4rem, 6vw, 4rem);
+}
+
+@media (min-width: 980px) {
+  .project-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .project-card {
+    grid-column: span 6;
+  }
+
+  .project-card--featured {
+    grid-column: 1 / -1;
+  }
+}
+
+.project-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-radius: var(--radius-l);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.project-card--featured .project-card__body {
+  display: grid;
+  gap: 0.8rem;
+}
+
+@media (min-width: 980px) {
+  .project-card--featured {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: 1fr;
+    align-items: stretch;
+  }
+
+  .project-card--featured .project-card__media {
+    grid-column: 1 / span 7;
+    aspect-ratio: auto;
+    height: 100%;
+  }
+
+  .project-card--featured .project-card__body {
+    grid-column: 8 / span 5;
+    align-content: center;
+    padding: clamp(2rem, 5vw, 3.6rem);
+  }
+}
+
+.project-card__body {
+  display: grid;
+  gap: 0.8rem;
+  padding: clamp(1.6rem, 4vw, 2.2rem);
+}
+
+.journey__grid {
+  display: grid;
+  gap: clamp(2rem, 6vw, 4rem);
+}
+
+@media (min-width: 980px) {
+  .journey__grid {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    align-items: start;
+  }
+
+  .journey__head {
+    position: sticky;
+    top: calc(var(--header-h) + 2rem);
+  }
+}
+
+.timeline {
+  display: grid;
+  gap: clamp(1.8rem, 4vw, 2.6rem);
+  margin: 0;
+  padding: 0 0 0 2.6rem;
+  list-style: none;
+}
+
+.timeline__item {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.timeline__date {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-size: 0.8rem;
+}
+
+.contact__grid {
+  display: grid;
+  gap: clamp(2rem, 6vw, 4rem);
+  margin-top: clamp(2.4rem, 6vw, 4rem);
+}
+
+@media (min-width: 980px) {
+  .contact__grid {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    align-items: start;
+  }
+}

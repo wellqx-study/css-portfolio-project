@@ -1,5 +1,42 @@
 /* =========================================================
    03 · ЕДИНИЦЫ ИЗМЕРЕНИЯ
-   Что здесь пишем: rem, %, svh, ch, clamp(), min(): ширина контейнера, высота первого экрана, отступы
    ========================================================= */
 
+:root {
+  font-size: 100%;
+}
+
+html {
+  font-size: clamp(16px, 0.9vw + 14px, 18px);
+}
+
+.hero {
+  padding-block: clamp(6rem, 14vw, 12rem) clamp(4rem, 10vw, 8rem);
+  min-height: clamp(100svh, 110svh, 120svh);
+}
+
+.hero__inner {
+  display: grid;
+  gap: clamp(2rem, 6vw, 4rem);
+  align-items: center;
+}
+
+@media (min-width: 980px) {
+  .hero__inner {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    row-gap: clamp(3rem, 8vw, 5rem);
+  }
+
+  .hero__content {
+    grid-column: 1 / span 7;
+  }
+
+  .hero__visual {
+    grid-column: 8 / span 5;
+    justify-self: end;
+  }
+
+  .hero__stats {
+    grid-column: 1 / -1;
+  }
+}

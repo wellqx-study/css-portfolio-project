@@ -1,5 +1,83 @@
 /* =========================================================
    02 · БЛОЧНАЯ МОДЕЛЬ
-   Что здесь пишем: box-sizing, padding, margin, border, border-radius у секций, кнопок, карточек
    ========================================================= */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: calc(var(--header-h) + 1.2rem);
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(1200px 800px at 80% -10%, color-mix(in oklch, var(--neon-green) 4%, transparent), transparent),
+              var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+.container {
+  width: min(1120px, 100% - (var(--gutter) * 2));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section-space);
+}
+
+.section__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 6vw, 4.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.section__lead {
+  margin: clamp(1rem, 2vw, 1.4rem) 0 0;
+  max-width: 68ch;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.2vw, 1.08rem);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.38em;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 1.8rem;
+  height: 1px;
+  background: var(--marker);
+}

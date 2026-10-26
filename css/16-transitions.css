@@ -1,5 +1,23 @@
 /* =========================================================
    16 · TRANSITION
-   Что здесь пишем: transition-property, duration, timing-function: плавность для hover из тем 07, 14 и 15
    ========================================================= */
 
+a,
+button,
+.nav__link,
+.btn,
+.project-card__link,
+.site-footer__links a {
+  transition: color 140ms var(--ease-out), opacity 140ms var(--ease-out), background 140ms var(--ease-out), border-color 140ms var(--ease-out), box-shadow 140ms var(--ease-out);
+}
+
+.nav__link:hover,
+.project-card__link:hover,
+.site-footer__links a:hover,
+.contact__list a:hover {
+  color: var(--marker);
+}
+
+.btn--ghost:hover {
+  border-color: color-mix(in oklch, var(--marker) 60%, var(--border));
+}

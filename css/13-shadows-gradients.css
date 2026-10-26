@@ -1,5 +1,45 @@
 /* =========================================================
    13 · ТЕНИ И ГРАДИЕНТЫ
-   Что здесь пишем: box-shadow, linear-/radial-gradient, «маркер» под текстом, фоны, прозрачность через color-mix()
    ========================================================= */
 
+.portrait {
+  box-shadow: var(--shadow-elev);
+}
+
+.skill-card {
+  box-shadow: var(--shadow-soft);
+}
+
+.project-card {
+  box-shadow: var(--shadow-soft);
+}
+
+.btn--primary {
+  background: var(--accent-strong);
+  color: var(--on-accent);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn--primary:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+.hero__stats {
+  box-shadow: var(--shadow-soft);
+}
+
+.contact__info {
+  padding: clamp(1.8rem, 4vw, 2.6rem);
+  border-radius: var(--radius-l);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.form {
+  padding: clamp(1.8rem, 4vw, 2.8rem);
+  border-radius: var(--radius-l);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}

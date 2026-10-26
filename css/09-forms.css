@@ -1,5 +1,132 @@
 /* =========================================================
    09 · СТИЛИЗАЦИЯ ФОРМ
-   Что здесь пишем: appearance, поля, select, radio, checkbox, accent-color, textarea, resize
    ========================================================= */
 
+.form {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.form__row {
+  display: grid;
+  gap: 1.2rem;
+}
+
+@media (min-width: 720px) {
+  .form__row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.field {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.field__label {
+  font-size: 0.98rem;
+}
+
+.field__control {
+  appearance: none;
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-m);
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, color-mix(in oklch, var(--surface) 98%, transparent), var(--surface));
+  transition: border-color 160ms var(--ease-out), box-shadow 160ms var(--ease-out), background 160ms var(--ease-out);
+}
+
+.field__control::placeholder {
+  color: color-mix(in oklch, var(--muted) 80%, transparent);
+}
+
+.field__control:focus-visible {
+  border-color: color-mix(in oklch, var(--marker) 70%, var(--border));
+  box-shadow: 0 0 0 4px color-mix(in oklch, var(--marker) 12%, transparent);
+}
+
+.field__control:user-invalid {
+  border-color: color-mix(in oklch, var(--cherry) 70%, var(--border));
+}
+
+textarea.field__control {
+  min-height: 9rem;
+  resize: vertical;
+  line-height: 1.8;
+}
+
+select.field__control {
+  background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+                    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position: calc(100% - 1.4rem) calc(50% - 0.2rem), calc(100% - 1rem) calc(50% - 0.2rem);
+  background-size: 0.4rem 0.4rem, 0.4rem 0.4rem;
+  background-repeat: no-repeat;
+  padding-right: 2.6rem;
+}
+
+.field--choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.2rem;
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius-m);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.field--choices .field__label {
+  flex-basis: 100%;
+  margin: 0;
+}
+
+.choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.choice input {
+  appearance: none;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  accent-color: var(--accent);
+}
+
+.choice input[type="checkbox"] {
+  border-radius: 0.4rem;
+}
+
+.choice input::before {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 140ms var(--ease-out);
+  background: var(--accent);
+}
+
+.choice input[type="checkbox"]::before {
+  border-radius: 0.2rem;
+}
+
+.choice input:checked::before {
+  transform: scale(1);
+}
+
+.choice--consent {
+  align-items: flex-start;
+}
+
+.choice--consent input {
+  margin-top: 0.3rem;
+}
+
+.form__submit {
+  justify-self: start;
+}
