@@ -111,7 +111,7 @@
   }
 
   .site-header__cta {
-    display: none;
+    display: inline-flex;
   }
 }
 

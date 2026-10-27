@@ -44,9 +44,9 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(140deg, color-mix(in oklch, var(--cherry) 12%, transparent) 0%, transparent 40%);
+  background: linear-gradient(140deg, color-mix(in oklch, var(--violet) 10%, transparent) 0%, transparent 40%);
   mix-blend-mode: multiply;
-  opacity: 0.3;
+  opacity: 0.26;
   z-index: 1;
 }
 

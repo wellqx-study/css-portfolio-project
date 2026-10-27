@@ -4,10 +4,10 @@
 
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 color-mix(in oklch, var(--marker) 36%, transparent);
+    box-shadow: 0 0 0 0 color-mix(in oklch, var(--marker) 24%, transparent);
   }
   70% {
-    box-shadow: 0 0 0 10px color-mix(in oklch, var(--marker) 0%, transparent);
+    box-shadow: 0 0 0 8px color-mix(in oklch, var(--marker) 0%, transparent);
   }
   100% {
     box-shadow: 0 0 0 0 color-mix(in oklch, var(--marker) 0%, transparent);
@@ -34,6 +34,18 @@
 
 .marquee__track {
   animation: marquee 28s linear infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklch, var(--marker) 16%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 10px color-mix(in oklch, var(--marker) 0%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in oklch, var(--marker) 0%, transparent);
+  }
 }
 
 @keyframes marquee {
